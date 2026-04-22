@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Submit fractal</title>
+        <link rel="stylesheet" href="styles/style.css">
+    </head>
+    <body>
+        <div class="header">
+            <div>
+                <a href="index.html">Головна сторінка</a>
+                <a href="gallery.html">Галерея</a>
+                <a href="what_is_fractal.html">Що таке фрактал</a>
+                <a href="submit_img.html">Запостити фрактал</a>
+            </div>
+            <div>
+                <a href="login.html">Увійти в акаунт</a>
+                <a href="register.html">Зареєструватися</a>
+            </div>        
+        </div>
+        
+        <div class="main">
+            <p>Тут ви можете надіслати зображення фракталу для поповнення галереї</p>
+            <form>
+                <label for="fileName">Назва</label>
+                <input type="text" name="fileName" id="fileName">
+                <label for="fileToUpload">Select image to upload:</label>
+                <input type="file" name="fileToUpload" id="fileToUpload" accept="image/*">                
+                <input type="submit" value="Upload Image" name="submit">
+            </form>
+        </div>
+    </body>
+</html>
