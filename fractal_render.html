@@ -2,28 +2,45 @@
 <html>
     <head>
         <title>Fractal Genrator</title>
+        <link rel="stylesheet" href="styles/style.css">
     </head>
     <body>
-        <canvas id="canvas" width="600" height="450"></canvas>
-        
-        <select>
-            <option value="Mandelbrot set">Mandelbrot set</option>
-            <option value="Julia set">Julia set</option>
-        </select> 
+        <div class="header">
+            <div>
+                <a href="index.html">Головна сторінка</a>
+                <a href="gallery.html">Галерея</a>
+                <a href="what_is_fractal.html">Що таке фрактал</a>
+                <a href="submit_img.html">Запостити фрактал</a>
+                <a href="fractal_render.html">Рендерінг фракталу</a>
+            </div>
+            <div>
+                <a href="login.html">Увійти в акаунт</a>
+                <a href="register.html">Зареєструватися</a>
+            </div>        
+        </div>
+        <div class="main">
+
+            <canvas id="canvas" width="600" height="450"></canvas>
+            
+            <select>
+                <option value="Mandelbrot set">Mandelbrot set</option>
+                <option value="Julia set">Julia set</option>
+            </select> 
 
         <p>Re z Value: <span id="re_z_output">0</span></p>
         <input type="range" min="-1" max="1" id="re_z_value" step="0.00001" value="0">
 
         <p>Im z Value: <span id="im_z_output">0</span></p>
         <input type="range" min="-1" max="1" id="im_z_value" step="0.00001" value="0">
-
+        
         <p>Current Value: <span id="iteration_output">200</span></p>
         <input type="range" min="100" max="600" id="iteration" value="200">
         
         <input list="fractal_sets" name="set" id="set">
         
         
-
+        
         <script src="js/render-BSet.js"></script>
+    </div>
     </body>
 </html>

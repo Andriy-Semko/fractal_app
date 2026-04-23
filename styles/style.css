@@ -7,9 +7,9 @@
 .header{
     height: 60px;
     background-color: #010b56;
-    
+    box-shadow: 0px 5px 5px black;
     background-color: #f3f3f3;
-    background-color: black;
+    background-color: #1f2833;
     display: flex;
     justify-content: space-between;
 }
@@ -28,7 +28,13 @@
     background-color: #030f70;
     
 }
+.header > div > a:active {
+    background-color: #020a44;
+    
+}
 body{
     color: #f3f3f3;
     background-color: #000223;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
+
