@@ -1,4 +1,3 @@
-// ===== DOM =====
 const slider_re = document.getElementById('re_z_value');
 const slider_im = document.getElementById('im_z_value');
 const slider_iter = document.getElementById('iteration');
@@ -10,12 +9,12 @@ const iter_out = document.getElementById('iteration_output');
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 
-// ===== INIT =====
+// --
 re_out.textContent = slider_re.value;
 im_out.textContent = slider_im.value;
 iter_out.textContent = slider_iter.value;
 
-// ===== EVENTS =====
+//--
 let step = 0.01;
 let moveStepX = 0;
 let moveStepY = 0;
@@ -64,7 +63,6 @@ slider_iter.addEventListener('input', () => {
     safeDraw();
 });
 
-// ===== FAST FRACTAL =====
 function belongsFast(re, im, maxIter, c_re, c_im) {
     let z_re = re;
     let z_im = im;
@@ -84,7 +82,6 @@ function belongsFast(re, im, maxIter, c_re, c_im) {
     return i;
 }
 
-// ===== DRAW =====
 function draw(width, height, maxIter) {
     const imageData = ctx.createImageData(width, height);
     const data = imageData.data;
@@ -93,7 +90,7 @@ function draw(width, height, maxIter) {
     const c_re = parseFloat(slider_re.value);
     const c_im = parseFloat(slider_im.value);
 
-    // область
+    //область
     const minRe = -2 * -s + moveStepX, maxRe = 2 * -s + moveStepX;
     const minIm = -1 * -s + moveStepY, maxIm = 1 * -s + moveStepY;
     
@@ -115,15 +112,15 @@ function draw(width, height, maxIter) {
             if (iter >= maxIter) {
                 r = g = b = 0;
             } else {
-                // простий колір
+
                 let t = iter / maxIter;
 
                 //r = 255 * t;
                 //g = 255 * (1 - t);
                 //b = 150 + 100 * t;
                 r = 9 * (1 - t) * t * t * t * 255;
-g = 15 * (1 - t) * (1 - t) * t * t * 255;
-b = 8.5 * (1 - t) * (1 - t) * (1 - t) * t * 255;
+                g = 15 * (1 - t) * (1 - t) * t * t * 255;
+                b = 8.5 * (1 - t) * (1 - t) * (1 - t) * t * 255;
             }
 
             data[index++] = r;
@@ -136,7 +133,6 @@ b = 8.5 * (1 - t) * (1 - t) * (1 - t) * t * 255;
     ctx.putImageData(imageData, 0, 0);
 }
 
-// ===== DEBOUNCE =====
 let timeout;
 
 function safeDraw() {
@@ -146,5 +142,4 @@ function safeDraw() {
     }, 30);
 }
 
-// ===== START =====
 safeDraw();

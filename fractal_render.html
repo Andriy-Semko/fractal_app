@@ -18,25 +18,25 @@
                 <a href="register.html">Зареєструватися</a>
             </div>        
         </div>
-        <div class="main">
+        <div class="main-render">
 
             <canvas id="canvas" width="600" height="450"></canvas>
             
-            <select>
+        <div class="inputs">
+            <!--<select>
                 <option value="Mandelbrot set">Mandelbrot set</option>
                 <option value="Julia set">Julia set</option>
-            </select> 
-
-        <p>Re z Value: <span id="re_z_output">0</span></p>
-        <input type="range" min="-1" max="1" id="re_z_value" step="0.00001" value="0">
-
-        <p>Im z Value: <span id="im_z_output">0</span></p>
-        <input type="range" min="-1" max="1" id="im_z_value" step="0.00001" value="0">
-        
-        <p>Current Value: <span id="iteration_output">200</span></p>
-        <input type="range" min="100" max="600" id="iteration" value="200">
-        
-        <input list="fractal_sets" name="set" id="set">
+            </select>--> 
+            
+            <p>Re z Value: <span id="re_z_output">0</span></p>
+            <input class="slider" type="range" min="-1" max="1" id="re_z_value" step="0.00001" value="-0.65">
+            
+            <p>Im z Value: <span id="im_z_output">0</span></p>
+            <input class="slider" type="range" min="-1" max="1" id="im_z_value" step="0.00001" value="0.49">
+            
+            <p>Iteration Value: <span id="iteration_output">200</span></p>
+            <input class="slider" type="range" min="100" max="600" id="iteration" value="200">
+        </div>
         
         
         
